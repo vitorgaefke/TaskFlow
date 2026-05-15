@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using TaskFlow.Infra.DBConfiguration.EFCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ApplicationContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 
