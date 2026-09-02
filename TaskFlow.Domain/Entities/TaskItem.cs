@@ -10,7 +10,7 @@ namespace TaskFlow.Domain.Entities
     {
         public int Id { get; set; }
         public required string Name { get; set; }
-        public int StatusId { get; set; }
+        public int StatusId { get; set; } = 1; // Valor padrão para "TODO"
         public TaskItemStatus Status { get; set; } = null!;
     }
 }
